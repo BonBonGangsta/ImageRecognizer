@@ -11,8 +11,19 @@ import Vision // used to applu classification models to images
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     var resnetModel = Resnet50()
-    var imagePicker  = UIIMagePickerController()
-
+    var imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var navBar: UINavigationItem!
+    @IBAction func albumTapped(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker,animated: true, completion:nil)
+    }
+    
+    @IBAction func photoTapped(_ sender: Any) {
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var imageView: UIImageView!
    
     override func viewDidLoad() {
@@ -24,7 +35,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate , UINavi
     }
     
     func classifyPicture(image: UIImage){
+        // get a model reference with VNCoreML and providing resNetModel as the argument
+        // VNCoreMLModel is the container for the Core ML model used in Vision
+        if let model = try? VNCoreMLModel (for: resnetModel.model){
+            // the model reference will create an analysis request for the image and processed through
+            // the handler
+            let request = VNCoreMLRequest(model: model) {(request,error) in
+                if let results = request.results as? [VNClassificationObservation]{
+                    let result = results[0]
+                    self.navBar?.title = result.identifier
+                }
+            }
+            // The completion handler is called when we get back information after the request has been
+            // completed. then we execute it with the perform method of VNImageRequestHandler
+            if let imageData = image.jpegData(compressionQuality: 1.0){
+                let handler = VNImageRequestHandler(data:imageData, options:[:])
+                try? handler.perform([request])
+            }
+        }
+    }
+    
+    func imagePickerController(_ picker:UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        if let image = info[.originalImage] as? UIImage{
+            imageView.image = image
+            classifyPicture(image: image)
+        }
         
+        picker.dismiss(animated: true, completion: nil)
     }
 
 }
