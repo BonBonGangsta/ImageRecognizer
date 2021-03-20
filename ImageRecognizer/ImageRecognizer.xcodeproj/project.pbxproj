@@ -14,6 +14,7 @@
 		FC369C7F25F466190039B6AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC369C7E25F466190039B6AF /* Assets.xcassets */; };
 		FC369C8225F466190039B6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC369C8025F466190039B6AF /* LaunchScreen.storyboard */; };
 		FC369C8B25F466D70039B6AF /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FC369C8A25F466D70039B6AF /* Resnet50.mlmodel */; };
+		FC8B95022601AE7A00873576 /* Chapter7Attempt3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FC8B95012601AE7A00873576 /* Chapter7Attempt3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FC369C8125F466190039B6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC369C8325F466190039B6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC369C8A25F466D70039B6AF /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		FC8B95012601AE7A00873576 /* Chapter7Attempt3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Chapter7Attempt3.mlmodel; path = ../../Chapter7Attempt3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				FC369C7525F466180039B6AF /* AppDelegate.swift */,
 				FC369C7725F466180039B6AF /* SceneDelegate.swift */,
 				FC369C7925F466180039B6AF /* ViewController.swift */,
+				FC8B95012601AE7A00873576 /* Chapter7Attempt3.mlmodel */,
 				FC369C8A25F466D70039B6AF /* Resnet50.mlmodel */,
 				FC369C7B25F466180039B6AF /* Main.storyboard */,
 				FC369C7E25F466190039B6AF /* Assets.xcassets */,
@@ -144,6 +147,7 @@
 				FC369C7625F466180039B6AF /* AppDelegate.swift in Sources */,
 				FC369C8B25F466D70039B6AF /* Resnet50.mlmodel in Sources */,
 				FC369C7825F466180039B6AF /* SceneDelegate.swift in Sources */,
+				FC8B95022601AE7A00873576 /* Chapter7Attempt3.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
