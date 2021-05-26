@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreML
-import Vision // used to applu classification models to images
+import Vision // used to apply classification models to images
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     var resnetModel = Resnet50()
